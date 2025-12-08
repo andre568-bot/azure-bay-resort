@@ -1,0 +1,421 @@
+/* Dining Page Styles */
+
+.dining-page .section-label {
+    display: block;
+    margin-bottom: var(--space-4);
+}
+
+.intro-text {
+    font-size: var(--text-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: var(--leading-relaxed);
+}
+
+/* Restaurants Grid */
+.restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+.restaurant-card {
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.restaurant-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+}
+
+.restaurant-image {
+    position: relative;
+    min-height: 300px;
+}
+
+.restaurant-card.featured .restaurant-image {
+    min-height: 400px;
+}
+
+.restaurant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-tag {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    background: var(--color-sand-500);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+}
+
+.restaurant-content {
+    padding: var(--space-8);
+}
+
+.cuisine-type {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-azure-600);
+}
+
+.restaurant-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    margin: var(--space-2) 0 var(--space-4);
+}
+
+.restaurant-content>p {
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-relaxed);
+}
+
+.restaurant-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-4);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: var(--text-xs);
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+.info-value {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-800);
+}
+
+.price-range {
+    color: var(--color-sand-600);
+}
+
+.restaurant-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+}
+
+.feature-tag {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    background: var(--color-azure-50);
+    color: var(--color-azure-700);
+    border-radius: var(--radius-full);
+}
+
+/* Menu Modal */
+.menu-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+}
+
+.menu-modal {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+}
+
+.menu-header {
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-azure-700) 0%, var(--color-azure-900) 100%);
+    text-align: center;
+}
+
+.menu-header h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+}
+
+.menu-header p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.menu-content {
+    padding: var(--space-8);
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.menu-content h3 {
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-azure-200);
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.item-name {
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-800);
+}
+
+.item-desc {
+    font-size: var(--text-sm);
+    color: var(--color-gray-500);
+}
+
+.item-price {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-azure-700);
+    white-space: nowrap;
+    margin-left: var(--space-4);
+}
+
+.menu-note {
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-gray-500);
+    margin-top: var(--space-6);
+}
+
+.menu-footer {
+    padding: var(--space-6) var(--space-8);
+    background: var(--color-gray-50);
+    text-align: center;
+}
+
+/* Experiences Grid */
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.experience-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.experience-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.experience-card:hover .experience-image img {
+    transform: scale(1.05);
+}
+
+.experience-content {
+    padding: var(--space-6);
+}
+
+.experience-content h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+}
+
+.experience-content p {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-4);
+}
+
+.experience-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+    padding: var(--space-3);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+
+.experience-meta .price {
+    font-weight: var(--font-semibold);
+    color: var(--color-azure-700);
+}
+
+/* Room Service Section */
+.room-service-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.service-text h2 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-6);
+}
+
+.service-text>p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: var(--space-8);
+}
+
+.service-features li {
+    padding: var(--space-3) 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-features li::before {
+    content: '✓ ';
+    color: var(--color-azure-400);
+}
+
+.service-image {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+}
+
+.service-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Reservations Section */
+.contact-options {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-12);
+    margin-bottom: var(--space-8);
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.contact-icon {
+    font-size: var(--text-2xl);
+}
+
+.contact-value {
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--color-gray-800);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .restaurants-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-card.featured {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+    }
+
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-service-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .service-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .restaurant-info {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .contact-options {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+}
