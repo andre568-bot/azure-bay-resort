@@ -875,3 +875,37 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 480px) {
+    .date-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-main {
+        padding: var(--space-4);
+    }
+
+    .progress-step {
+        flex: 0 0 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: var(--space-2);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+    }
+
+    .booking-progress {
+        gap: var(--space-2);
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: var(--text-xs);
+    }
+
+    .step-label {
+        font-size: var(--text-xs);
+        text-align: left;
+    }
+}
