@@ -80,16 +80,17 @@
 /* Booking Widget */
 .hero-booking-widget {
     position: absolute;
-    bottom: 80px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    width: 100%;
+    width: calc(100% - 48px);
     max-width: 900px;
     padding: 0 var(--space-6);
 }
 
 .booking-widget {
+    position: relative;
     display: flex;
     align-items: flex-end;
     gap: var(--space-4);
@@ -99,6 +100,33 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.widget-close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-full);
+    background: var(--color-white);
+    color: var(--color-gray-900);
+    border: none;
+    font-size: var(--text-xl);
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    z-index: 20;
+}
+
+.widget-close-btn:hover {
+    background: var(--color-azure-500);
+    color: var(--color-white);
+    transform: scale(1.1);
 }
 
 .booking-field {
@@ -1133,5 +1161,21 @@
     .cta-benefits {
         flex-direction: column;
         gap: var(--space-2);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-booking-widget {
+        left: var(--space-4);
+        right: var(--space-4);
+        width: auto;
+        transform: none;
+        padding: 0;
+        bottom: 20px;
+    }
+
+    .booking-widget {
+        width: 100%;
+        padding: var(--space-4);
     }
 }

@@ -63,6 +63,7 @@ const weatherData = {
 };
 
 export default function HomePage() {
+    const [showBookingWidget, setShowBookingWidget] = useState(true);
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
     useEffect(() => {
@@ -106,36 +107,46 @@ export default function HomePage() {
                 </div>
 
                 {/* Booking Widget */}
-                <motion.div
-                    className="hero-booking-widget"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                    <div className="booking-widget glass">
-                        <div className="booking-field">
-                            <label>Check In</label>
-                            <input type="date" defaultValue="2024-03-15" />
+                {showBookingWidget && (
+                    <motion.div
+                        className="hero-booking-widget"
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                    >
+                        <div className="booking-widget glass">
+                            <button
+                                className="widget-close-btn"
+                                onClick={() => setShowBookingWidget(false)}
+                                aria-label="Close booking widget"
+                            >
+                                ×
+                            </button>
+                            <div className="booking-field">
+                                <label>Check In</label>
+                                <input type="date" defaultValue="2024-03-15" />
+                            </div>
+                            <div className="booking-field">
+                                <label>Check Out</label>
+                                <input type="date" defaultValue="2024-03-18" />
+                            </div>
+                            <div className="booking-field">
+                                <label>Guests</label>
+                                <select defaultValue="2">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5+ Guests</option>
+                                </select>
+                            </div>
+                            <Link to="/booking" className="btn btn-gold btn-lg booking-cta">
+                                Check Availability
+                            </Link>
                         </div>
-                        <div className="booking-field">
-                            <label>Check Out</label>
-                            <input type="date" defaultValue="2024-03-18" />
-                        </div>
-                        <div className="booking-field">
-                            <label>Guests</label>
-                            <select defaultValue="2">
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4 Guests</option>
-                                <option value="5">5+ Guests</option>
-                            </select>
-                        </div>
-                        <Link to="/booking" className="btn btn-gold btn-lg booking-cta">
-                            Check Availability
-                        </Link>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                )}
 
                 {/* Scroll Indicator */}
                 <div className="scroll-indicator">
